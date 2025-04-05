@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image'; // ✅ Import Next.js Image component
+import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 
 const CategoryProducts = () => {
@@ -35,7 +35,7 @@ const CategoryProducts = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 min-h-screen">
       <h1 className="text-3xl font-bold mb-6 capitalize text-blue-700">
-        Products in "{category}"
+        Products in &quot;{category}&quot;
       </h1>
 
       {loading && <p>Loading products...</p>}
