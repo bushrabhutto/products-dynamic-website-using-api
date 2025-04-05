@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image'; // ✅ Import Next.js Image component
 import { useCart } from '@/context/CartContext';
 
 const CategoryProducts = () => {
@@ -48,11 +49,15 @@ const CategoryProducts = () => {
           >
             <Link href={`/Products/${product.id}`}>
               <div className="cursor-pointer">
-                <img
-                  className="rounded-t-lg w-full h-48 object-cover"
-                  src={product.thumbnail}
-                  alt={product.title}
-                />
+                <div className="relative w-full h-48">
+                  <Image
+                    src={product.thumbnail}
+                    alt={product.title}
+                    fill
+                    className="rounded-t-lg object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
                 <div className="p-5">
                   <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {product.title}

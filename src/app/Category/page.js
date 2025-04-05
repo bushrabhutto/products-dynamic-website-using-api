@@ -34,7 +34,7 @@ const Category = () => {
         This is the category page where all details of categories of products are listed.
       </p>
 
-      {/* Loading State */}
+   
       {loading && (
         <div className="flex justify-center items-center py-10">
           <div className="w-10 h-10 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
@@ -42,14 +42,14 @@ const Category = () => {
         </div>
       )}
 
-      {/* Error State */}
+ 
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
           <strong className="font-semibold">Error: </strong> {error}
         </div>
       )}
 
-      {/* Data Display */}
+     
       {!loading && !error && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {categories.map((category, index) => (

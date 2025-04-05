@@ -1,6 +1,6 @@
-// components/HeroSection.js
 import Image from 'next/image';
-import store from '../assets/store.jpg'
+import Link from 'next/link'; 
+import store from '../assets/store.jpg';
 
 export default function Home() {
   return (
@@ -14,23 +14,23 @@ export default function Home() {
             Shop what you want we provide high quality products
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
-              href="#"
+            <Link
+              href="/products"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
-           Shop Now
-            </a>
-            <a
-              href="#"
+              Shop Now
+            </Link>
+            <Link
+              href="/about"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <Image
-            src={store } // replace with your image path (e.g., public/hero-img.png)
+            src={store}
             alt="hero image"
             width={500}
             height={500}

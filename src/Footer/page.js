@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <Link href="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-            <img src="https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1689615579/catalog/1680994206333120512/mxpphssqkswp3nd08dhy.jpg" className="h-8" alt="Flowbite Logo" />
+
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">E-commerce</span>
           </Link>
 

@@ -1,25 +1,30 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; // ✅ Import Next.js Image
 import { ShoppingCart } from 'lucide-react';
-import { useCart } from '../context/CartContext'; 
+import { useCart } from '../context/CartContext';
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { totalItems } = useCart(); 
+  const { totalItems } = useCart();
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-     
         <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1689615579/catalog/1680994206333120512/mxpphssqkswp3nd08dhy.jpg" className="h-8" alt="Logo" />
+          <Image
+            src="https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1689615579/catalog/1680994206333120512/mxpphssqkswp3nd08dhy.jpg"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="h-8 w-auto"
+          />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-         E-commerce
+            E-commerce
           </span>
         </Link>
 
-        {/* Mobile menu toggle button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
@@ -35,7 +40,6 @@ const NavigationBar = () => {
           </svg>
         </button>
 
-        {/* Navigation Links */}
         <div className={`${isOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg 
                          bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white 
@@ -63,10 +67,9 @@ const NavigationBar = () => {
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
                 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500"
               >
-              services
+                Services
               </Link>
             </li>
-
             <li className="relative">
               <Link
                 href="/Cart"
@@ -82,7 +85,6 @@ const NavigationBar = () => {
                 )}
               </Link>
             </li>
-
             <li>
               <Link
                 href="/Contact"

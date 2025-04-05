@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import Image from 'next/image';
 
 const ProductDetails = ({ params }) => {
-  const { id } = params; // ✅ Directly access id without use()
+  const { id } = params; 
+  
   const { addToCart } = useCart();
 
   const [product, setProduct] = useState(null);
@@ -58,7 +60,7 @@ const ProductDetails = ({ params }) => {
       <h1 className="text-3xl font-bold mb-6 text-blue-700">{product.title}</h1>
 
       <div className="grid md:grid-cols-2 gap-10 items-start">
-        <img
+      <Image
           src={product.thumbnail}
           alt={product.title}
           className="w-full h-80 object-cover rounded-lg shadow-md"

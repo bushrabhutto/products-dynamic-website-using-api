@@ -30,7 +30,7 @@ export default function ProductsPage() {
                 {category}
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">
-                View products in the <strong>"{category}"</strong> category.
+                View products in the <strong>&quot;{category}&quot;</strong> category.
               </p>
             </div>
           ))}
